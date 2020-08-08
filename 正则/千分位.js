@@ -5,6 +5,11 @@ function format(num) {
 // Number.prototype.toLocaleString
 // 11111.11.toLocaleString()
 
+//
+
+
+/(\d{1,3})(?=(\d{3})+(?=$|\.))/g
+
 /(\d{1,3})(?=(\d{3})+(?:$|\.))/g
 
 

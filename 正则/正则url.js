@@ -15,7 +15,7 @@ function getQueryObject(search) {
 console.log(
     getQueryObject('?utm_source=gold_browser_extension')
 );
-
+/([^?&=]+)=([^&]*)/g
 
 //  const searchObj = new URLSearchParams(search);
 
