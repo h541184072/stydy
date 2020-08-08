@@ -1,0 +1,13 @@
+回溯法
+
+
+0078.Subsets.js   // 数组不重复 所有子集
+0090.Subsets II.js // 数组重复 所有子集  **if (i > j && nums[i] === nums[i - 1]) continue;
+0039.Combination Sum.js // 数组不重复 和为target的子集
+0040.Combination Sum II.js // 数组重复 和为target的子集  **if (i > j && nums[i] === nums[i - 1]) continue;
+0046.全排列.js // 数组不重复 全排列  if (stack.includes(nums[i])) continue;
+0047.全排列 II.js // 数组重复 全排列  if (hashArr[i]) continue;
+                                    if (i > 0 && nums[i] === nums[i - 1] && hashArr[i - 1]) continue;
+
+
+

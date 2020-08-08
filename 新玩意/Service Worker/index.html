@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+    <link rel="stylesheet" href="./main2.css" />
+    <body>
+        <div id="bbbb"></div>
+    </body>
+    <script>
+        // https://mp.weixin.qq.com/s/8mjrSeQfG2m5Kpkb13EPAg
+        /* (function() {
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    })()*/
+    </script>
+    <script>
+        // 我们不能拿着锤子，看什么都像钉子。
+        // 网站功能趋于稳定：频繁迭代的网站似乎不方便加Service Worker。
+//         网站需要拥有大量用户：管理后台、OA系统等场景似乎不是很有必要加Service Worker。
+//         网站真的在追求用户体验：Bug多多、脸不好看的网站似乎不是很有必要加Service Worker。
+//         网站用户体验关乎用户留存：12306似乎完全不需要加Service Worker。
+
+// 简单总结：Service Worker的初衷是极致优化用户体验，是用来锦上添花的，技术只是技术，但实际应用前，应考虑成本和收益。
+
+        /*
+    * Service Worker的一大应用是可以利用CacheStorage API来缓存js、css、字体、图片等静态文件。我们可以在Service Worker的install阶段，指定需要缓存的具体文件，在fetch事件的回调函数中，检查请求的url，如果匹配了已缓存的资源，则不再从服务端获取，以此达到提升网页性能的目的。常用的构建PWA的App Shell架构，就是利用这种方式实现的。
+需要注意的是，性能的提升是相对于完全没有缓存的情况来讲的，而浏览器本身有着相对完善的HTTP缓存机制。所以使用Service Worker缓存，并不能使我们已经相对完善的架构有立竿见影的性能提升，Service Worker缓存真正有意义的地方在于，利用它可以更精准地、以编码方式控制缓存，如何缓存、缓存什么、如何更新缓存，完全取决于代码如何写，所以这提供了很大的自由度，但同时也带来维护成本。它只是换了一种缓存方式，而不是从无到有的突破。
+https://juejin.im/post/5d26aec1f265da1ba56b47ea
+    *
+    * */
+    </script>
+    <link rel="stylesheet" href="./main.css" />
+</html>

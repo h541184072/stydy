@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "@tms/await-to-catch": "^1.0.5"
+  }
+}

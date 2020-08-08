@@ -1,0 +1,29 @@
+<!DOCTYPE >
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <link rel="stylesheet" href="./index.css">
+        <script>
+            requestAnimationFrame(function() {
+                var firstPaintTime = Date.now() - performance.timing.navigationStart;
+                console.log('get first paint time by raf:', firstPaintTime);
+            });
+            window.onload = function() {
+                requestAnimationFrame(function() {
+                    var firstPaintTime =
+                        window.chrome.loadTimes().firstPaintTime * 1000 - window.performance.timing.navigationStart;
+                    console.log('get first paint time by chrome.loadTimes().firstPaintTime:', firstPaintTime);
+                });
+            };
+        </script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    </head>
+    <body>
+        <script>
+            var start = Date.now();
+            while (Date.now() - start < 3000) {} // white screen
+        </script>
+    </body>
+</html>
