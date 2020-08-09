@@ -122,6 +122,7 @@ React 会根据任务的优先级去分配各自的 expirationTime，在过期�
 
 ```text
 高阶组件:多层嵌套
+解耦
 ```
 
 6.React 架构

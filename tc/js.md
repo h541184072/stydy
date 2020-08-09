@@ -2,21 +2,6 @@
 js基础
 ---
 
-2.实现 let
-
-```javascript
-// try-catch
-for (var i = 0; i < 10; i++) {
-    try {
-        throw i;
-    } catch (e) {
-        setTimeout(() => {
-            console.log(e);
-        });
-    }
-}
-```
-
 5.类数组的转换
 
 ```javascript
@@ -89,6 +74,7 @@ SSR等
 17.js 运行机制
 
 -   [event loop](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
+
 ```text
 (macro)task->渲染->(macro)task->...
 
@@ -98,6 +84,7 @@ SSR等
 当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染
 渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取）
 ```
+
 ![image](https://camo.githubusercontent.com/47479c8773d91e8eef4a359eca57bb1361183b9e/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30322f30382f356335643661353238626461662e6a7067)
 
 18. V8 引擎的垃圾回收机制
@@ -278,8 +265,7 @@ es6先新建父类的实例对象this。然后再用子类的构造函数修改t
 ```
 
 24.webpack 热更新原理
+
 ```text
 
 ```
-
-
