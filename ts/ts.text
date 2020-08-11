@@ -1,0 +1,128 @@
+ClipboardEvent<T = Element> 剪贴板事件对象
+DragEvent<T = Element> 拖拽事件对象
+ChangeEvent<T = Element> Change 事件对象
+KeyboardEvent<T = Element> 键盘事件对象
+MouseEvent<T = Element> 鼠标事件对象
+TouchEvent<T = Element> 触摸事件对象
+WheelEvent<T = Element> 滚轮事件对象
+AnimationEvent<T = Element> 动画事件对象
+TransitionEvent<T = Element> 过渡事件对象
+
+import { MouseEvent } from 'react';
+
+interface IProps {
+  onClick(event: MouseEvent<HTMLDivElement>): void;
+}
+
+-----------------
+keyof
+
+function get<T extends object, K extends keyof T>(o: T, name: K): T[K] {
+  return o[name]
+}
+-----------------
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+};
+
+type Required<T> = {
+  [P in keyof T]-?: T[P];
+};
+
+type Pick<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
+
+interface User {
+  id: number;
+  age: number;
+  name: string;
+};
+
+// 相当于: type PartialUser = { id?: number; age?: number; name?: string; }
+type PartialUser = Partial<User>
+
+// 相当于: type PickUser = { id: number; age: number; }
+type PickUser = Pick<User, "id" | "age">
+
+-------
+Condition Type
+
+T extends U ? X : Y
+
+type isTrue<T> = T extends true ? true : false
+// 相当于 type t = false
+type t = isTrue<number>
+
+// 相当于 type t = false
+type t1 = isTrue<false>
+-------
+never & Exclude & Omit
+
+type Exclude<T, U> = T extends U ? never : T;
+
+// 相当于: type A = 'a'
+type A = Exclude<'x' | 'a', 'x' | 'y' | 'z'>
+
+type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
+
+interface User {
+  id: number;
+  age: number;
+  name: string;
+};
+
+// 相当于: type PickUser = { age: number; name: string; }
+type OmitUser = Omit<User, "id">
+--------
+
+function isAxiosError (error: any): error is AxiosError {
+  return error.isAxiosError
+}
+
+if (isAxiosError(err)) {
+  code = `Axios-${err.code}`
+}
+----------
+下面是如何在TypeScript里使用此函数，通过 索引类型查询和 索引访问操作符：
+
+function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
+  return names.map(n => o[n]);
+}
+
+interface Person {
+    name: string;
+    age: number;
+}
+let person: Person = {
+    name: 'Jarid',
+    age: 35
+};
+let strings: string[] = pluck(person, ['name']); // ok, string[]
+
+--------
+索引类型和字符串索引签名
+
+interface Map<T> {
+    [key: string]: T;
+}
+let keys: keyof Map<number>; // string
+let value: Map<number>['foo']; // number
+-----
+    let result = {} as T;
+------
+// set
+type Size = 'small' | 'default' | 'big' | 'large';
+// map
+interface IA {
+    a: string
+    b: number
+}
+    // map => set
+    type IAKeys = keyof IA;    // 'a' | 'b'
+    type IAValues = IA[keyof IA];    // string | number
+
+    // set => map
+    type SizeMap = {
+        [k in Size]: number
+    }
