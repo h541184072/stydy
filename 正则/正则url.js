@@ -17,6 +17,10 @@ console.log(
 );
 /([^?&=]+)=([^&]*)/g
 
+
+/([^&=?])=([^&]*)/g
+
+/(\d{1,3})(?=(\d{3})+(?=$|\.))/g
 //  const searchObj = new URLSearchParams(search);
 
 

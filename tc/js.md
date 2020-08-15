@@ -263,9 +263,3 @@ es6先新建父类的实例对象this。然后再用子类的构造函数修改t
     input_dom.addEventListener('compositionstart',onCompositionStart);
     input_dom.addEventListener('compositionend',onCompositionEnd);
 ```
-
-24.webpack 热更新原理
-
-```text
-
-```

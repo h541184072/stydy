@@ -4,9 +4,11 @@
 
 1.在浏览器输入一个 URL 的整体过程是怎么样的
 
+-   [从输入url到页面展示到底发生了什么](https://mp.weixin.qq.com/s/7eY3XIhLXeCMqBYIQh6WwA)
+
 3.描述一下浏览器缓存
 
--   [《浏览》器缓存机制浅析](https://mp.weixin.qq.com/s/F5gvzdi6MTwCFXV9LKs9NQ)_`外链`_
+-   [《浏览》器缓存机制浅析](https://mp.weixin.qq.com/s/F5gvzdi6MTwCFXV9LKs9NQ)
 
 ```text
 非HTTP协议定义的缓存机制
