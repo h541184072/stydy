@@ -11,13 +11,10 @@ Function.prototype.bind2 = function(context) {
     return f;
 };
 
-
-
 function a(aa) {
     console.log(this.name)
     console.log(aa)
 }
-
 
 const b = a.bind2({name:'bb'})
 

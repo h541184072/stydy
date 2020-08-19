@@ -13,7 +13,7 @@ css基础
 
 2.移动端适配方案 (#)
 
--   [《关于移动端适配，你必须要知道的》](https://juejin.im/post/5cddf289f265da038f77696c)_`外链`_
+-   [《关于移动端适配，你必须要知道的》](https://juejin.im/post/5cddf289f265da038f77696c)
 
 3.写出 3 种水平垂直居中方案
 
@@ -58,9 +58,9 @@ async: 下载完就执行, 加载完成后会自动执行脚本
 
 9.SSR 和 PreRender 
 
--   [《CSR、SSR、Prerender 原理全解密》](https://www.shangmayuan.com/a/43b9749957e0484eb5242333.html)_`外链`_
+-   [《CSR、SSR、Prerender 原理全解密》](https://www.shangmayuan.com/a/43b9749957e0484eb5242333.html)
 ```text
-PreRender 就是利用 Chrome 官方出品的 Puppeteer 工具，对页面进行爬取。
+PreRender 就是利用 Chrome 官方出品的 Puppeteer 工具，对页面进行爬取。    prerender-spa-plugin
 
 能够看出，SSR 和 PreRender 的最大区别就在于，PreRender 是静态的，SSR 是动态的，SSR 会在服务端实时构建出对应的 DOM。
 ```
