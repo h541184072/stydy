@@ -39,3 +39,20 @@ var maxDepth = function(root) {
         if (r) queue.push(r);
     }
 };
+
+// BFS
+var maxDepth = function(root) {
+    if (!root) return 0;
+    let queue = [root],
+        res = 0;
+    while (queue.length) {
+        let temp = [];
+        res += 1;
+        for (let i = 0; i < queue.length; i++) {
+            if (queue[i].left) temp.push(queue[i].left);
+            if (queue[i].right) temp.push(queue[i].right);
+        }
+        queue = temp;
+    }
+    return res;
+};

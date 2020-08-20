@@ -32,13 +32,6 @@ absolute transform
   link可以使用 js 动态引入，@import不行
 ```
 
-5.CSS动画
-```text
-transition: 过渡动画
-
-animation / keyframes
-```
-
 6. css表达式
 ```text
 避免使用CSS表达式（Expression）
@@ -63,4 +56,20 @@ async: 下载完就执行, 加载完成后会自动执行脚本
 PreRender 就是利用 Chrome 官方出品的 Puppeteer 工具，对页面进行爬取。    prerender-spa-plugin
 
 能够看出，SSR 和 PreRender 的最大区别就在于，PreRender 是静态的，SSR 是动态的，SSR 会在服务端实时构建出对应的 DOM。
+```
+
+10.transition的局限
+```text
+transition的优点在于简单易用，但是它有几个很大的局限。
+
+（1）transition需要事件触发，所以没法在网页加载时自动发生。
+
+（2）transition是一次性的，不能重复发生，除非一再触发。
+
+（3）transition只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态。
+
+（4）一条transition规则，只能定义一个属性的变化，不能涉及多个属性。
+
+CSS Animation就是为了解决这些问题而提出的。
+    keyframes
 ```
