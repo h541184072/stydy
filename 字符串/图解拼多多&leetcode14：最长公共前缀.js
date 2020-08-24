@@ -38,3 +38,22 @@ function aa(strA, strB) {
 }
 
 console.log(a(strs));
+
+function longString(strs) {
+    if (strs === null || strs.length === 0) return;
+    if (strs.length === 1) return strs[0];
+    let min = 0,
+        max = 0;
+    for (let i = 1, len = strs.length; i < len; i++) {
+        if (strs[i].length < strs[min].length) min = i;
+        if (strs[i].length > strs[max].length) max = i;
+    }
+
+    for (let j = 0, len = strs[min].length; j < len; j++) {
+        if (strs[min][j] !== strs[max][j]) {
+            return strs[min].slice(0, j);
+        }
+    }
+
+    return strs[min];
+}
