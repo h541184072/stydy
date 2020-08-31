@@ -28,13 +28,13 @@ var lengthOfLongestSubstring = function(s) {
     return max;
 };
 
-// 别人的
+// 别人的 O(n2)
 var lengthOfLongestSubstring = function(s) {
     var res = 0,
         i = 0;
     var temp = [];
-    while(i < s.length) {
-        if(temp.indexOf(s[i]) === -1) {
+    while (i < s.length) {
+        if (temp.indexOf(s[i]) === -1) {
             temp.push(s[i]);
         } else {
             temp.shift();
@@ -46,3 +46,16 @@ var lengthOfLongestSubstring = function(s) {
     return res;
 };
 
+var maxSubString = function(s) {
+    let map = new Map(),
+        max = 0;
+    for (let i = 0, j = 0; j < s.length; j++) {
+        if (map.has(s[j])) {
+            i = Math.max(map.get(s[j]) + 1, i);
+        }
+        max = Math.max(max, j - i + 1);
+        map.set(s[j], j);
+    }
+
+    return max;
+};

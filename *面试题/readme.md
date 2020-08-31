@@ -1,4 +1,4 @@
-1.chunkhash contenthash hash 的区别
+1.  hash chunkhash contenthash  的区别
 ```text
 hash 
     一个变了 别的都变
@@ -8,7 +8,6 @@ chunkhash
 contenthash
     是针对文件内容级别的，只有你自己模块的内容变了，那么hash值才改变
     new extractTextPlugin('../css/bundle.[name].[contenthash].css')
-
 
 ETag 里的hash   last-modify + content-length
 ```
@@ -41,8 +40,6 @@ JavaScript 有自动垃圾收集机制，最常用的是通过标记清除的算
 ```
 
 3.什么情况用 tostring 什么情况用 valueof
-
-4.虚拟 dom 的好处，如何计算出两个 dom 不同的
 
 5.history 是如何监听的
 
@@ -135,7 +132,7 @@ HTTP/2的多路复用就是为了解决上述的两个性能问题。 在 HTTP/2
 
 9:http 缓存机制
 
-10:简述 LRU -\*\*
+10:简述 LRU // 0146.LRU缓存机制.js
 
 11:js 声明一个变量，最少占用多少字节 -:8?
 

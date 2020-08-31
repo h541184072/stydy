@@ -21,16 +21,11 @@ var threeSum = function(nums) {
     const list = [];
     for (let i = 0, len = nums.length; i < len; i++) {
         // 下面容易被忽略
-        if (i > 0 && nums[i] === nums[i - 1]) continue;
+        if (nums[i] === nums[i - 1]) continue;
         let left = i;
         let right = len - 1;
         while (left < right) {
-            // 不能跟自己重复
-            if (left === i) {
-                left++;
-            } else if (right === i) {
-                right--;
-            } else if (nums[i] + nums[left] + nums[right] === 0) {
+            if (nums[i] + nums[left] + nums[right] === 0) {
                 list.push([nums[i], nums[left], nums[right]]);
                 while (nums[left] === nums[++left]) {}
                 while (nums[right] === nums[--right]) {}

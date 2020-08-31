@@ -175,3 +175,11 @@ webpack-dev-server 主要包含了三个部分：
 7.Client获取到新的JS模块后，会更新 modules tree并替换掉现有的模块；
 8.最后调用 module.hot.accept() 完成热更新；
 ```
+
+1.webpack 中 loader 和 plugin 的区别是什么
+```text
+loader，它是一个转换器，将A文件进行编译成B文件，比如：将A.less转换为A.css，单纯的文件转换过程。
+
+plugin是一个扩展器，它丰富了webpack本身，针对是loader结束后，webpack打包的整个过程，它并不直接操作文件，
+而是基于事件机制工作，会监听webpack打包过程中的某些节点，执行广泛的任务
+```
