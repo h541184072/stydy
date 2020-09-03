@@ -13,6 +13,7 @@ function format(num) {
 /(\d{1,3})(?=(\d{3})+(?:$|\.))/g
 
 
+// (str+'').replace(/(\d{1,3})(?=(\d{3})+(?=$|\.))/g,'$1,')
 // (?:pattern) 与 (?=pattern)都匹配pattern，但不会把pattern结果放到Matches的集合中，即Matcher.group()不会匹配到(?;pattern)与(?=pattern)
 
 // 区别

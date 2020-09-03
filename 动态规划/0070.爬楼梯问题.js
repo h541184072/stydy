@@ -20,6 +20,8 @@ function fn2(n) {
         n1 = n2;
         n2 = res;
     }
+
+    return res
 }
 
 // 空间复杂度：O(1)

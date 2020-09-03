@@ -1,8 +1,7 @@
 function deepTraversal(node) {
     const nodes = [];
     const stack = [];
-    if (!node) return nodes;
-    stack.push(node);
+    if (node) stack.push(node);
     while (stack.length) {
         const item = stack.pop();
         nodes.push(item);
@@ -11,4 +10,5 @@ function deepTraversal(node) {
             stack.push(children[i]);
         }
     }
+    return nodes;
 }

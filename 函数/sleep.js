@@ -14,7 +14,7 @@ function lazyMan(name) {
     let run = () => {
         let sequence = Promise.resolve();
         for (const func of this.task) {
-            sequence = sequence.then(() => func());
+            sequence = sequence.then(func);
         }
     };
     setTimeout(() => {
@@ -22,10 +22,10 @@ function lazyMan(name) {
     }, 0);
     this.eat = str => {
         this.task.push(() => {
-            return new (res => {
+            return new Promise(res => {
                 console.log('eat:' + str);
                 res();
-            })();
+            });
         });
         return this;
     };

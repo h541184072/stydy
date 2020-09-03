@@ -42,9 +42,9 @@ var maxDepth = function(root) {
 
 // BFS
 var maxDepth = function(root) {
-    if (!root) return 0;
-    let queue = [root],
+    let queue = [],
         res = 0;
+    if (root) queue.push(root);
     while (queue.length) {
         let temp = [];
         res += 1;

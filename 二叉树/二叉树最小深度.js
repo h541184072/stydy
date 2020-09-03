@@ -9,9 +9,9 @@ function minDepth(root) {
 
 // BFS
 function minDepth2(root) {
-    if (!root) return 0;
-    let stack = [root],
+    let stack = [],
         ans = 0;
+    if (root) stack.push(root);
     while (stack.length) {
         let temp = [];
         ans++;
@@ -22,4 +22,6 @@ function minDepth2(root) {
         }
         stack = temp;
     }
+
+    return ans;
 }

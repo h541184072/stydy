@@ -8,7 +8,6 @@ Your function should return length = 5,
 * 返回个数,数组修改成[0,1,2,3,4]
 * */
 
-
 /*
 *
 * // nums is passed in by reference. (i.e., without making a copy)
@@ -27,15 +26,15 @@ for (int i = 0; i < len; i++) {
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    if(!nums.length) return 0
-    let fastP = 1
-    let slowP = 0
-    for(let len = nums.length;fastP<len;fastP++){
-        if(nums[fastP]!==nums[slowP]){
-            slowP++
-            nums[slowP] = nums[fastP]
+    if (!nums.length) return 0;
+    let fastP = 1;
+    let slowP = 0;
+    for (let len = nums.length; fastP < len; fastP++) {
+        if (nums[fastP] !== nums[slowP]) {
+            slowP++;
+            nums[slowP] = nums[fastP];
         }
     }
 
-    return  slowP+1
+    return slowP + 1;
 };
