@@ -1,5 +1,5 @@
 function isObject(obj) {
-    return typeof obj === 'object' && obj != null;
+    return typeof obj === 'object' && obj !== null;
 }
 function cloneDeep3(source, hash = new WeakMap()) {
     if (!isObject(source)) return source;
