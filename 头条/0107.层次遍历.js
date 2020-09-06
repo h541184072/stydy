@@ -6,10 +6,10 @@ function fn(root) {
         const cur = [];
         const temp = [];
         while (queue.length) {
-            const temp = queue.shift();
-            cur.push(temp.val);
-            if (temp.left) temp.push(temp.left);
-            if (temp.right) temp.push(temp.right);
+            const node = queue.shift();
+            cur.push(node.val);
+            if (node.left) temp.push(node.left);
+            if (node.right) temp.push(node.right);
         }
 
         list.push(cur);
@@ -18,3 +18,6 @@ function fn(root) {
 
     return list;
 }
+
+
+
