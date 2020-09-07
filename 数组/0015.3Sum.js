@@ -22,7 +22,7 @@ var threeSum = function(nums) {
     for (let i = 0, len = nums.length; i < len; i++) {
         // 下面容易被忽略
         if (nums[i] === nums[i - 1]) continue;
-        let left = i;
+        let left = i + 1;
         let right = len - 1;
         while (left < right) {
             if (nums[i] + nums[left] + nums[right] === 0) {

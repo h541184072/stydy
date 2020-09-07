@@ -14,7 +14,10 @@ function asyncToGenerator(generatorFunc) {
                 if (done) {
                     return resolve(value);
                 } else {
-                    return Promise.resolve(value).then(val => step('next', val), err => step('throw', err));
+                    return Promise.resolve(value).then(
+                        val => step('next', val),
+                        err => step('throw', err)
+                    );
                 }
             }
 
