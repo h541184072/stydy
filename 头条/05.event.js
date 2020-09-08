@@ -1,9 +1,7 @@
 function Event() {
     const list = {};
     const on = function(name, fn) {
-        if (!list[name]) {
-            list[name] = [];
-        }
+        if (!list[name]) list[name] = [];
         list[name].push(fn);
     };
 
@@ -34,15 +32,15 @@ function Event() {
 
 const event = new Event();
 
-const dd  = ()=> console.log(2)
+const dd = () => console.log(2);
 
-event.on('a',()=> console.log(1))
-event.on('a',dd)
-event.on('a',()=> console.log(3))
-event.once('b',()=> console.log(4))
-event.emit('a')
-event.remove('a',dd)
-event.emit('a')
-console.log('--------')
-event.emit('b')
-event.emit('b')
+event.on('a', () => console.log(1));
+event.on('a', dd);
+event.on('a', () => console.log(3));
+event.once('b', () => console.log(4));
+event.emit('a');
+event.remove('a', dd);
+event.emit('a');
+console.log('--------');
+event.emit('b');
+event.emit('b');
